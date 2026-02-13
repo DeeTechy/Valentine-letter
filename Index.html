@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A Letter Just For You ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom right, #ffe6ec, #fff5f7);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 80px 20px;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 40px;
+  background-color: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e63956;
+}
+
+#letter {
+  display: none;
+  max-width: 650px;
+  margin: 40px auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.heart {
+  position: fixed;
+  color: #ff4d6d;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
+}
+
+#final {
+  display: none;
+  font-weight: bold;
+  margin-top: 25px;
+  font-size: 20px;
+  color: #ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hey Beautiful 🤍</h1>
+<p>A letter traveled across distance just to reach you.</p>
+<p>Open it when you're ready ❤️</p>
+
+<button onclick="openLetter()">💌 Open Your Letter</button>
+
+<div id="letter">
+  <p><strong>My Love,</strong></p>
+
+  <p>If I could shrink the distance between us into something small,
+  I would fold it into this envelope.</p>
+
+  <p>Loving you from far away has shown me something special —
+  that closeness is not about location…
+  it’s about connection.</p>
+
+  <p>You make my normal days feel meaningful.
+  You make my worries feel lighter.
+  You make my future feel exciting.</p>
+
+  <p>And yes… I still smile randomly because of you.</p>
+
+  <p>Fun fact:
+  You are officially my favorite notification,
+  my favorite voice,
+  and my favorite human.</p>
+
+  <p>One day,
+  I won’t be writing about distance.
+  I’ll be holding your hand instead.</p>
+
+  <p>Until then,
+  I choose you.
+  Every day.
+  Without hesitation.</p>
+
+  <button onclick="showFinal()">One More Thing...</button>
+
+  <div id="final">
+    Happy Valentine’s Day ❤️  
+    I’m so lucky you’re mine.
+  </div>
+</div>
+
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+  createHearts();
+}
+
+function showFinal() {
+  document.getElementById("final").style.display = "block";
+}
+
+function createHearts() {
+  setInterval(function() {
+    var heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+      heart.remove();
+    }, 6000);
+  }, 500);
+}
+</script>
+
+</body>
+  </html>
